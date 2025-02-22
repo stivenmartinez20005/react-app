@@ -5,6 +5,19 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [count2, setCount2] = useState(0)
+
+  interface User {
+    name: string;
+    password: string;
+    edad: number;
+  }
+
+  let ronaldo: User = {
+    name: "Cristiano",
+    password: "compaq",
+    edad: 41
+  }
 
   return (
     <>
@@ -16,10 +29,13 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React from {ronaldo.name}</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
+        </button>
+        <button className='bg-[#fff] text-[black]' onClick={() => setCount2((count2) => count2 - 1)}>
+          countdown is {count2}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
